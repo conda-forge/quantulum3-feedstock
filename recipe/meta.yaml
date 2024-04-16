@@ -1,5 +1,5 @@
 {% set name = "quantulum3" %}
-{% set version = "0.8.1" %}
+{% set version = "0.9.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d949fc9bb47c5547ada396624d5c52ee01e4a8181a585cf20ee7b05be039764b
+  sha256: 9e2cf465fed7242d7069ae601ba50c367c9ceac510d0c3414dda2173645bbf09
 
 build:
   noarch: python
