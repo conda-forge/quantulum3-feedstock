@@ -6,20 +6,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 797b5d94c52d23107010838fbf2d3bb4f15630f4e90556401bdb042a1c12fc1e
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.5
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.5
+    - python >={{ python_min }}
     - inflect
     - num2words
 
@@ -28,6 +28,7 @@ test:
     - quantulum3
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
 
